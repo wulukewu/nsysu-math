@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.11.0](https://github.com/wulukewu/nsysu-math/compare/v1.10.0...v1.11.0) (2025-02-03)
+
+
+### Features
+
+* remove WDM_LOCAL env ([f559513](https://github.com/wulukewu/nsysu-math/commit/f5595138f5014b9d52bbdb0ef6b3ff56c0d2c07c))
+
 ## [1.10.0](https://github.com/wulukewu/nsysu-math/compare/v1.9.0...v1.10.0) (2025-02-03)
 
 
