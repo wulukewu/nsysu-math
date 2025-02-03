@@ -16,8 +16,7 @@ RUN apt-get install -y wget unzip && \
     apt-get clean
 
 # Install chromium-browser
-RUN apt-get install -y sudo && \
-    sudo apt-get install -y chromium-browser
+RUN apt-get install -y chromium-browser
 
 # Copy the requirements file into the container
 COPY requirements.txt .
