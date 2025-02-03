@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.0](https://github.com/wulukewu/nsysu-math/compare/v1.5.0...v1.6.0) (2025-02-03)
+
+
+### Features
+
+* fix apt-get install chromium-browser issue ([49337ec](https://github.com/wulukewu/nsysu-math/commit/49337ec3a3f7b810d2fec7064e40543be3bc101e))
+
 ## [1.5.0](https://github.com/wulukewu/nsysu-math/compare/v1.4.0...v1.5.0) (2025-02-03)
 
 
