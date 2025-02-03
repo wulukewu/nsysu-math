@@ -105,9 +105,9 @@ options.add_argument('--ignore-certificate-errors')
 options.add_argument('--allow-insecure-localhost')
 
 # Initialize the ChromeDriver
-# service = Service(executable_path=ChromeDriverManager().install())
-# driver = webdriver.Chrome(service=service, options=options)
-driver = webdriver.Chrome(options=options)
+# driver = webdriver.Chrome(options=options) # works on local
+service = Service(executable_path=ChromeDriverManager().install())
+driver = webdriver.Chrome(service=service, options=options)
 
 print("Chrome version:", driver.capabilities['browserVersion'])
 print("ChromeDriver version:", driver.capabilities['chrome']['chromedriverVersion'])
