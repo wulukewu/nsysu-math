@@ -18,8 +18,9 @@ RUN apt-get install -y ./google-chrome-stable_current_amd64.deb
 
 # Get latest compatible ChromeDriver
 RUN CHROME_VERSION=$(google-chrome --version | awk '{print $3}') && \
-    DRIVER_VERSION=$(curl -s "https://googlechromelabs.github.io/chrome-for-testing/LATEST_RELEASE_$CHROME_VERSION") && \
-    wget -O /tmp/chromedriver.zip "https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/$DRIVER_VERSION/linux64/chromedriver-linux64.zip" && \
+    DRIVER_VERSION=$(curl -s "https://googlechromelabs.github.io/chrome-for-testing/last-known-good-versions-with-downloads.json" | jq -r ".channels.Stable.version") && \
+    DRIVER_PATH=$(curl -s "https://googlechromelabs.github.io/chrome-for-testing/last-known-good-versions-with-downloads.json" | jq -r ".channels.Stable.downloads.chromedriver[] | select(.platform==\"linux64\") | .url") && \
+    wget -O /tmp/chromedriver.zip "$DRIVER_PATH" && \
     unzip /tmp/chromedriver.zip -d /usr/local/bin/ && \
     mv /usr/local/bin/chromedriver-linux64/chromedriver /usr/local/bin/chromedriver && \
     chmod +x /usr/local/bin/chromedriver && \
