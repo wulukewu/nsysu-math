@@ -10,6 +10,7 @@ RUN apt-get update && \
     wget -O /tmp/chromedriver.zip https://chromedriver.storage.googleapis.com/$(wget -q -O - https://chromedriver.storage.googleapis.com/LATEST_RELEASE)/chromedriver_linux64.zip && \
     unzip /tmp/chromedriver.zip -d /usr/local/bin/ && \
     rm /tmp/chromedriver.zip && \
+    chmod +x /usr/local/bin/chromedriver && \
     apt-get clean
 
 # Copy the requirements file into the container

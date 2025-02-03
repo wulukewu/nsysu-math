@@ -106,7 +106,8 @@ options.add_argument('--allow-insecure-localhost')
 
 # Initialize the ChromeDriver
 # driver = webdriver.Chrome(options=options)
-service = ChromeService(executable_path='/usr/local/bin/chromedriver')
+# service = ChromeService(executable_path='/usr/local/bin/chromedriver')
+service = ChromeService(ChromeDriverManager().install())
 driver = webdriver.Chrome(service=service, options=options)
 
 # Navigate to the home problem page

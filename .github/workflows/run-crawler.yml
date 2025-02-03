@@ -29,4 +29,4 @@ jobs:
             -e DISCORD_TOKEN=${{ secrets.DISCORD_TOKEN }} \
             -e DISCORD_GUILD_ID=${{ secrets.DISCORD_GUILD_ID }} \
             -e DISCORD_CHANNEL_ID=${{ secrets.DISCORD_CHANNEL_ID }} \
-            ghcr.io/${{ github.repository }}:latest || docker logs $(docker ps -a -q --filter "ancestor=ghcr.io/${{ github.repository }}:latest" --format="{{.ID}}")
+            ghcr.io/${{ github.repository }}:latest
