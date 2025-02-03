@@ -6,7 +6,7 @@ from datetime import datetime, timedelta, timezone
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.chrome.service import Service as ChromeService
+from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 import requests
 
@@ -96,16 +96,17 @@ def format_message(input_date, input_message):
 
 # Set up ChromeDriver with options
 options = webdriver.ChromeOptions()
-options.add_argument('--headless')
+options.add_argument("--headless")  
+options.add_argument("--disable-gpu") 
+options.add_argument("--disable-extensions")
+options.add_argument("--disable-infobars")
+options.add_argument("--start-maximized")
+options.add_argument("--disable-notifications")
 options.add_argument('--no-sandbox')
 options.add_argument('--disable-dev-shm-usage')
-options.add_argument('--disable-gpu')
-options.add_argument('--window-size=1920x1080')
-options.add_argument('--ignore-certificate-errors')
-options.add_argument('--allow-insecure-localhost')
 
 # Initialize the ChromeDriver
-service = ChromeService(ChromeDriverManager().install())
+service = Service(executable_path=ChromeDriverManager().install())
 driver = webdriver.Chrome(service=service, options=options)
 
 # Navigate to the home problem page
