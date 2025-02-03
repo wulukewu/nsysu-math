@@ -6,7 +6,6 @@ from datetime import datetime, timedelta, timezone
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from bs4 import BeautifulSoup
 
 import discord
 
@@ -26,18 +25,24 @@ def get_taiwan_date():
     return formatted_time
 
 def dc_send(message, token, guild_id, channel_id):
-
+    # Set up Discord client with default intents
     intents = discord.Intents.default()
     client = discord.Client(intents=intents)
 
     @client.event
     async def on_ready():
+        # Print login information
         print(f'We have logged in as {client.user}')
+        # Get the guild (server) by ID
         guild = discord.utils.get(client.guilds, id=guild_id)
+        # Get the channel by ID
         channel = discord.utils.get(guild.channels, id=channel_id)
+        # Send the message to the channel
         await channel.send(message)
+        # Close the client after sending the message
         await client.close()
 
+    # Run the Discord client with the provided token
     client.run(token)
 
 # Load environment variables from .env file
@@ -59,12 +64,13 @@ if not discord_channel_id:
 discord_channel_id = int(discord_channel_id)
 
 def format_message(input_date, input_message):
+    # Format the message with the date and message content
     if '\n' not in input_message:
         return f'{input_date}: {input_message}'
     else:
         return f'{input_date}:\n{input_message}'
 
-# Set up ChromeDriver
+# Set up ChromeDriver with options
 options = webdriver.ChromeOptions()
 options.add_argument('--headless')
 options.add_argument('--no-sandbox')
@@ -74,48 +80,49 @@ options.add_argument('--window-size=1920x1080')
 options.add_argument('--ignore-certificate-errors')
 options.add_argument('--allow-insecure-localhost')
 
+# Initialize the ChromeDriver
 driver = webdriver.Chrome(options=options)
 
+# Navigate to the specified URL
 driver.get('https://www.math.nsysu.edu.tw/~problem/')
-
-# time.sleep(3)
 
 # Get the URL from the specified XPath
 frame_element = driver.find_element(By.XPATH, '/html/frameset/frameset/frame[2]')
 frame_url = frame_element.get_attribute('src')
 print(f'URL of the frame: {frame_url}')
 
-# # Get the page source and parse it with BeautifulSoup
-# page_source = driver.page_source
-# soup = BeautifulSoup(page_source, 'html.parser')
-
-# # Print the prettified HTML
-# print(soup.prettify())
-
+# Navigate to the frame URL
 driver.get(frame_url)
 
+# Find the table element
 table_element = driver.find_element(By.XPATH, '/html/body/div/table')
+# Get all rows in the table
 rows = table_element.find_elements(By.TAG_NAME, 'tr')
 
+# Get the current date in Taiwan format
 now_date = get_taiwan_date()
 
 # Iterate over the rows from the last to the first
 for row in reversed(rows):
+    # Get all columns in the row
     columns = row.find_elements(By.TAG_NAME, 'td')
     if len(columns) >= 2:
+        # Extract the date and message from the columns
         announced_date = columns[0].text.strip()
         announced_message = columns[1].text
-        # print(f'announced_date: {announced_date}, announced_message: {announced_message}')
 
+        # Check if the announced date matches the current date
         if announced_date == now_date:
             print('[INFO] Sending message to the Discord channel...')
             
+            # Format the message
             message = format_message(announced_date, announced_message)
             print(message)
+            # Send the message to the Discord channel
             dc_send(message, discord_token, discord_guild_id, discord_channel_id)
-
     else:
         print('No columns found')
         break
 
+# Quit the driver
 driver.quit()
