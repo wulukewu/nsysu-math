@@ -6,6 +6,8 @@ from datetime import datetime, timedelta, timezone
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.service import Service as ChromeService
+from webdriver_manager.chrome import ChromeDriverManager
 import requests
 
 import discord
@@ -103,7 +105,9 @@ options.add_argument('--ignore-certificate-errors')
 options.add_argument('--allow-insecure-localhost')
 
 # Initialize the ChromeDriver
-driver = webdriver.Chrome(options=options)
+# driver = webdriver.Chrome(options=options)
+service = ChromeService(executable_path='/usr/local/bin/chromedriver')
+driver = webdriver.Chrome(service=service, options=options)
 
 # Navigate to the home problem page
 driver.get('https://www.math.nsysu.edu.tw/~problem/')
