@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.0](https://github.com/wulukewu/nsysu-math/compare/v1.4.0...v1.5.0) (2025-02-03)
+
+
+### Features
+
+* use chromium-browser followed from [stackoverflow](https://stackoverflow.com/questions/49323099/webdriverexception-message-service-chromedriver-unexpectedly-exited-status-co) ([b24ef34](https://github.com/wulukewu/nsysu-math/commit/b24ef3455663e2417c888568f0b9debf9f257449))
+
 ## [1.4.0](https://github.com/wulukewu/nsysu-math/compare/v1.3.0...v1.4.0) (2025-02-03)
 
 
