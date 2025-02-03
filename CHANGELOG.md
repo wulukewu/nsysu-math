@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.7.0](https://github.com/wulukewu/nsysu-math/compare/v1.6.0...v1.7.0) (2025-02-03)
+
+
+### Features
+
+* use chromium ([6922248](https://github.com/wulukewu/nsysu-math/commit/6922248711a2296ecf291fcb9fcbd572d80bfb49))
+
 ## [1.6.0](https://github.com/wulukewu/nsysu-math/compare/v1.5.0...v1.6.0) (2025-02-03)
 
 
