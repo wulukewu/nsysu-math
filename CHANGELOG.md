@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0](https://github.com/wulukewu/nsysu-math/compare/v1.2.0...v1.3.0) (2025-02-03)
+
+
+### Features
+
+* using webdriver_manager ([9cf086f](https://github.com/wulukewu/nsysu-math/commit/9cf086f19423c9a8eca650d35bb5ac8b8c47516e))
+
 ## [1.2.0](https://github.com/wulukewu/nsysu-math/compare/v1.1.0...v1.2.0) (2025-02-03)
 
 
