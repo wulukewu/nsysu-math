@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.16.0](https://github.com/wulukewu/nsysu-math/compare/v1.15.0...v1.16.0) (2025-02-03)
+
+
+### Features
+
+* install google-chrome-stable ([eca9653](https://github.com/wulukewu/nsysu-math/commit/eca9653a86d1fa16d2ede2c06c763be62a3fc6ec))
+
 ## [1.15.0](https://github.com/wulukewu/nsysu-math/compare/v1.14.0...v1.15.0) (2025-02-03)
 
 
