@@ -1,13 +1,29 @@
-# Use the official Python image from the Docker Hub
-FROM python:3.12-slim
+FROM ubuntu:latest
 
-# Set the working directory in the container
+# Set the working directory
 WORKDIR /app
 
-# Install dependencies and Chromium
-RUN apt-get update && \
-    apt-get install -y wget unzip chromium && \
-    apt-get clean
+# Install dependencies
+RUN apt-get update && apt-get install -y \
+    python3 \
+    python3-pip \
+    wget \
+    unzip \
+    curl \
+    libnss3 libnspr4 libatk1.0-0 libatk-bridge2.0-0 libcups2 libxss1 libxcomposite1 libxdamage1 libxfixes3 libxrandr2 libgbm1 libpango-1.0-0 libcairo2 libxkbcommon-x11-0
+
+# Get latest stable Chrome
+RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+RUN apt-get install -y ./google-chrome-stable_current_amd64.deb
+
+# Get latest compatible ChromeDriver
+RUN CHROME_VERSION=$(google-chrome --version | awk '{print $3}') && \
+    DRIVER_VERSION=$(curl -s "https://googlechromelabs.github.io/chrome-for-testing/LATEST_RELEASE_$CHROME_VERSION") && \
+    wget -O /tmp/chromedriver.zip "https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/$DRIVER_VERSION/linux64/chromedriver-linux64.zip" && \
+    unzip /tmp/chromedriver.zip -d /usr/local/bin/ && \
+    mv /usr/local/bin/chromedriver-linux64/chromedriver /usr/local/bin/chromedriver && \
+    chmod +x /usr/local/bin/chromedriver && \
+    rm /tmp/chromedriver.zip
 
 # Copy the requirements file into the container
 COPY requirements.txt .
