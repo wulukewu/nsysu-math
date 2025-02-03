@@ -4,21 +4,13 @@ FROM python:3.12
 # Set the working directory in the container
 WORKDIR /app
 
-# Install dependencies and Chromium
-RUN apt-get update && \
-    apt-get install -y wget unzip && \
-    apt-get clean
+# Copy the current directory contents into the container at /app
+COPY . /app
 
-# Copy the requirements file into the container
-COPY requirements.txt .
-
-# Install the dependencies
-RUN pip install --no-cache-dir -r requirements.txt
-RUN pip install -U selenium
-RUN pip install webdriver-manager
-
-# Copy the rest of the application code into the container
-COPY . .
+# Install dependencies
+RUN pip install --upgrade pip && \
+    pip install -r requirements.txt && \
+    pip install -U selenium
 
 # Accept build arguments for environment variables
 ARG DISCORD_TOKEN
