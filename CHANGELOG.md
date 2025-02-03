@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.9.0](https://github.com/wulukewu/nsysu-math/compare/v1.8.0...v1.9.0) (2025-02-03)
+
+
+### Features
+
+* fix chromedriver ([6966069](https://github.com/wulukewu/nsysu-math/commit/69660693e856946ebcff1c06c43a599efca36cd9))
+
 ## [1.8.0](https://github.com/wulukewu/nsysu-math/compare/v1.7.0...v1.8.0) (2025-02-03)
 
 
