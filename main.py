@@ -105,10 +105,7 @@ options.add_argument('--ignore-certificate-errors')
 options.add_argument('--allow-insecure-localhost')
 
 # Initialize the ChromeDriver
-if os.getenv('WDM_LOCAL') == 'true':
-    service = ChromeService(ChromeDriverManager(cache_valid_range=365).install())
-else:
-    service = ChromeService(ChromeDriverManager().install())
+service = ChromeService(ChromeDriverManager().install())
 driver = webdriver.Chrome(service=service, options=options)
 
 # Navigate to the home problem page
