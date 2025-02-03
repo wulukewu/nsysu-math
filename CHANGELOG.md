@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.8.0](https://github.com/wulukewu/nsysu-math/compare/v1.7.0...v1.8.0) (2025-02-03)
+
+
+### Features
+
+* change dockerfile from python to ubuntu ([c16f991](https://github.com/wulukewu/nsysu-math/commit/c16f991e40fdc56209489aabdcd7614cc116481c))
+
 ## [1.7.0](https://github.com/wulukewu/nsysu-math/compare/v1.6.0...v1.7.0) (2025-02-03)
 
 
