@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/wulukewu/nsysu-math/compare/v1.0.0...v1.1.0) (2025-02-03)
+
+
+### Features
+
+* run crawler by docker container ([b71a431](https://github.com/wulukewu/nsysu-math/commit/b71a431ab2c1584d41d1c5774f55fcb04a2453e7))
+
 ## 1.0.0 (2025-02-03)
 
 
