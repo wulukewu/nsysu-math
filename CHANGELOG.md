@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.2.0](https://github.com/wulukewu/nsysu-math/compare/v1.1.0...v1.2.0) (2025-02-03)
+
+
+### Features
+
+* debug docker runner ([f85b340](https://github.com/wulukewu/nsysu-math/commit/f85b340835cd83e756164e2e14c46ff1fd8c8683))
+* fix chromedriver 127 status error ([c338f0a](https://github.com/wulukewu/nsysu-math/commit/c338f0ab55a5790416e16091f82e37738da97908))
+
 ## [1.1.0](https://github.com/wulukewu/nsysu-math/compare/v1.0.0...v1.1.0) (2025-02-03)
 
 
