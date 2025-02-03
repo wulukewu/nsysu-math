@@ -4,14 +4,20 @@ FROM python:3.12-slim
 # Set the working directory in the container
 WORKDIR /app
 
-# Install dependencies and chromedriver
-RUN apt-get update && \
-    apt-get install -y wget unzip && \
+# Update the package list
+RUN apt-get update
+
+# Install chromedriver
+RUN apt-get install -y wget unzip && \
     wget -O /tmp/chromedriver.zip https://chromedriver.storage.googleapis.com/$(wget -q -O - https://chromedriver.storage.googleapis.com/LATEST_RELEASE)/chromedriver_linux64.zip && \
     unzip /tmp/chromedriver.zip -d /usr/local/bin/ && \
     rm /tmp/chromedriver.zip && \
     chmod +x /usr/local/bin/chromedriver && \
     apt-get clean
+
+# Install chromium-browser
+RUN apt-get install -y sudo && \
+    sudo apt-get install -y chromium-browser
 
 # Copy the requirements file into the container
 COPY requirements.txt .
