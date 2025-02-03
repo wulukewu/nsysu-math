@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.12.0](https://github.com/wulukewu/nsysu-math/compare/v1.11.0...v1.12.0) (2025-02-03)
+
+
+### Features
+
+* install chrome ([f15b172](https://github.com/wulukewu/nsysu-math/commit/f15b1728588ec42464cb675db37568e9c7400e9d))
+
 ## [1.11.0](https://github.com/wulukewu/nsysu-math/compare/v1.10.0...v1.11.0) (2025-02-03)
 
 
