@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.13.0](https://github.com/wulukewu/nsysu-math/compare/v1.12.0...v1.13.0) (2025-02-03)
+
+
+### Features
+
+* upgrade selenium and install webdriver_manager ([f664a49](https://github.com/wulukewu/nsysu-math/commit/f664a49b12388370cb31cb2d33de9dbfa38c1a45))
+
 ## [1.12.0](https://github.com/wulukewu/nsysu-math/compare/v1.11.0...v1.12.0) (2025-02-03)
 
 
