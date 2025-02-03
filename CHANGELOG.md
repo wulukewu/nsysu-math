@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.14.0](https://github.com/wulukewu/nsysu-math/compare/v1.13.0...v1.14.0) (2025-02-03)
+
+
+### Features
+
+* remove chromedriver manager ([159df51](https://github.com/wulukewu/nsysu-math/commit/159df51a185264136d1969c852ef19253cb3a2d5))
+
 ## [1.13.0](https://github.com/wulukewu/nsysu-math/compare/v1.12.0...v1.13.0) (2025-02-03)
 
 
