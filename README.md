@@ -85,8 +85,8 @@ To run the Docker container, you will need to pass the Discord bot token, guild 
 ```bash
 docker run --rm \
 -e DISCORD_TOKEN="YOUR_DISCORD_BOT_TOKEN" \
--e DISCORD_GUILD_ID=YOUR_DISCORD_GUILD_ID \
--e DISCORD_CHANNEL_ID=YOUR_DISCORD_CHANNEL_ID \
+-e DISCORD_GUILD_ID="YOUR_DISCORD_GUILD_ID" \
+-e DISCORD_CHANNEL_ID="YOUR_DISCORD_CHANNEL_ID" \
 ghcr.io/YOUR_USERNAME/nsysu-math:latest
 ```
 
