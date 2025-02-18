@@ -25,6 +25,9 @@ def get_taiwan_date():
     # Format the time as 'YYY.MM.DD'
     formatted_time = f"{taiwan_year:03}.{now_utc_plus_8.month:02}.{now_utc_plus_8.day:02}"
 
+    # Print the formatted time
+    print(f'Current Taiwan date: {formatted_time}')
+
     return formatted_time
 
 def dc_send(message, token, guild_id, channel_id):
@@ -147,6 +150,7 @@ for row in reversed(rows):
         # Extract the date and message from the columns
         announced_date = columns[0].text.strip()
         announced_message = columns[1].text
+        print(f'{announced_date}: {announced_message}')
 
         # Check if the announced date matches the current date
         if announced_date == now_date:
@@ -161,7 +165,8 @@ for row in reversed(rows):
             
             # Format the message
             message = format_message(announced_date, announced_message)
-            print(message)
+            print(f'Discord send message: {message}')
+
             # Send the message to the Discord channel
             dc_send(message, discord_token, discord_guild_id, discord_channel_id)
     else:
