@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.16.1](https://github.com/wulukewu/nsysu-math/compare/v1.16.0...v1.16.1) (2025-02-18)
+
+
+### Bug Fixes
+
+* log messages ([e7e989d](https://github.com/wulukewu/nsysu-math/commit/e7e989d953ebc6b5b1f2845e19ac3e349ca1c356))
+
 ## [1.16.0](https://github.com/wulukewu/nsysu-math/compare/v1.15.0...v1.16.0) (2025-02-03)
 
 
